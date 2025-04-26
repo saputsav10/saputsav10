@@ -1,7 +1,7 @@
 name: Metrics
 
 on:
-  schedule: [{cron: "0 0 * * *"}] # Runs every day at 00:00 UTC
+  schedule: [{cron: "0 0 * * *"}]
   push: {branches: ["main"]}
   workflow_dispatch:
 
@@ -12,8 +12,7 @@ jobs:
       - uses: lowlighter/metrics@latest
         with:
           token: ${{ secrets.METRICS_TOKEN }}
-          username: saputsav10
+          user: saputsav10
           template: classic
           base: header, activity, community, repositories, metadata
           config_timezone: Asia/Kathmandu
-
